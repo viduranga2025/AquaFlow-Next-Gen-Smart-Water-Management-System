@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AquaFlow | Smart City Water Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="aqua-body">
+    <div class="app-container">
+        <!-- Vertical Action Navigation -->
+        <nav class="flow-nav">
+            <div class="logo">AF</div>
+            <div class="nav-actions">
+                <button class="nav-item active" title="Residential Zone" onclick="WaterSystem.switchZone('Residential', this)">
+                    <i class="fa-solid fa-house-chimney-window"></i>
+                </button>
+                <button class="nav-item" title="Industrial Zone" onclick="WaterSystem.switchZone('Industrial', this)">
+                    <i class="fa-solid fa-industry"></i>
+                </button>
+                <button class="nav-item alert-btn" title="Emergency Mode" onclick="WaterSystem.switchZone('Emergency', this)">
+                    <i class="fa-solid fa-fire-extinguisher"></i>
+                </button>
+            </div>
+            <div class="user-status">
+                <i class="fa-solid fa-droplet"></i>
+            </div>
+        </nav>
+
+        <main class="dashboard">
+            <header class="dash-header">
+                <div class="zone-info">
+                    <h1 id="zone-display">Zone: Residential</h1>
+                    <p id="zone-desc">Automated supply to 1,200 households.</p>
+                </div>
+                <div class="system-status">
+                    <span id="flow-indicator" class="pulse-blue"></span> 
+                    <span id="status-text">Flow: Optimal</span>
+                </div>
+            </header>
+
+            <!-- Real-time Metrics -->
+            <div class="metrics-grid" id="metrics-container"></div>
+
+            <!-- Visualization Area -->
+            <div class="simulation-box">
+                <h3>Flow Dynamics Simulation</h3>
+                <div class="pipe-container">
+                    <div id="water-flow" class="flow-line"></div>
+                </div>
+                <div class="pressure-gauge">
+                    <span id="pressure-val">45 PSI</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
